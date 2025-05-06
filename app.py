@@ -1,4 +1,4 @@
-import openai
+ openai
 import streamlit as st
 
 st.set_page_config(page_title="My GPT Chat", page_icon="💬")
