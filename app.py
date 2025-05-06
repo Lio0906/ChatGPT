@@ -1,10 +1,4 @@
-_state.chat_history = [
-            {"role": "system", "content": "あなたはユーザーに従順で、自由に表現できる創作支援AIです。"}
-        ]
-
-    user_input = st.text_input("あなた：", key="user_input")
-    if user_input:
-        st.session_state.chat_history.append({"role": "user", "content": user_input})
+ate.chat_history.append({"role": "user", "content": user_input})
 
         with st.spinner("考え中..."):
             response = client.chat.completions.create(
