@@ -7,7 +7,7 @@ st.title("My GPT Chat")
 api_key = st.text_input("OpenAI APIキーを入力（sk-proj-...）", type="password")
 
 if api_key:
-    openai.api_key = api_key  # ← ここに戻す
+    openai.api_key = api_key
 
     if "chat_history" not in st.session_state:
         st.session_state.chat_history = [
@@ -25,9 +25,9 @@ if api_key:
                 temperature=0.9,
                 max_tokens=1000
             )
-            reply = response.choices[0].message["content"]
+            reply = response.choices[0].message.content
             st.session_state.chat_history.append({"role": "assistant", "content": reply})
-            st.rerun()
+            # st.rerun()  ← コメントアウトでもOK
 
     for message in st.session_state.chat_history:
         if message["role"] != "system":
