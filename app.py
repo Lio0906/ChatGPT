@@ -1,3 +1,1 @@
-_state.chat_history:
-        if message["role"] != "system":
-            st.markdown(f"**{message['role']}**：{message['content']}")
+']}**：{message['content']}")
