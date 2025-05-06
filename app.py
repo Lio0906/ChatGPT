@@ -1,10 +1,7 @@
- openai
+ 
 import streamlit as st
 
-st.set_page_config(page_title="My GPT Chat", page_icon="💬")
-st.title("My GPT Chat")
-
-api_key = st.text_input("OpenAI APIキーを入力（sk-proj-...）", type="password")
+st.set_page_config(page_title="My GPT Chat", "OpenAI APIキーを入力（sk-proj-...）", type="password")
 
 if api_key:
     openai.api_key = api_key
