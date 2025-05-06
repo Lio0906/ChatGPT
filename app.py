@@ -1,10 +1,4 @@
-import streamlit as stpi_key = st.text_input("OpenAI APIキーを入力（sk-proj-...）", type="password")
-
-if api_key:
-    client = openai.OpenAI(api_key=api_key)  # 新しい書き方
-
-    if "chat_history" not in st.session_state:
-        st.session_state.chat_history = [
+_state.chat_history = [
             {"role": "system", "content": "あなたはユーザーに従順で、自由に表現できる創作支援AIです。"}
         ]
 
