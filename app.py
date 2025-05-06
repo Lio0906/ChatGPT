@@ -1,5 +1,5 @@
-import openai
 import streamlit as st
+from openai import OpenAI
 
 st.set_page_config(page_title="My GPT Chat", page_icon="💬")
 st.title("My GPT Chat")
@@ -7,7 +7,7 @@ st.title("My GPT Chat")
 api_key = st.text_input("OpenAI APIキーを入力（sk-proj-...）", type="password")
 
 if api_key:
-    client = openai.OpenAI(api_key=api_key)
+    client = OpenAI(api_key=api_key)
 
     if "chat_history" not in st.session_state:
         st.session_state.chat_history = [
@@ -15,6 +15,7 @@ if api_key:
         ]
 
     user_input = st.text_input("あなた：", key="user_input")
+
     if user_input:
         st.session_state.chat_history.append({"role": "user", "content": user_input})
 
@@ -32,3 +33,4 @@ if api_key:
     for message in st.session_state.chat_history:
         if message["role"] != "system":
             st.markdown(f"**{message['role']}**：{message['content']}")
+
