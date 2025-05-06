@@ -1,11 +1,4 @@
-"あなた：", key="user_input")
-    if user_input:
-        st.session_state.chat_history.append({"role": "user", "content": user_input})
 
-        with st.spinner("考え中..."):
-            import openai
-
-# ここを追加！
 client = openai.OpenAI()
 
 # 書き方を新しくする！
